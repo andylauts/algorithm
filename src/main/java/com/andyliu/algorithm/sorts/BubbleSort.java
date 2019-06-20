@@ -7,7 +7,7 @@ public class BubbleSort {
             for (int j = 0; j < a.length - 1 - i; j++)
                 if (a[j] > a[j + 1])
                     swap(a, j);
-                return a;
+        return a;
     }
 
     private static void swap(int[] a, int j) {
@@ -16,9 +16,9 @@ public class BubbleSort {
         a[j + 1] = tmp;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("alksdjfalkdsjf");
-        for(int x :bubbleStort(new int[]{23, 423,3,234,235,23, 3}))
+        for (int x : bubbleStort(new int[]{23, 423, 3, 234, 235, 23, 3}))
             System.out.println(x);
         System.out.println("alksdjfalkdsjf");
     }
