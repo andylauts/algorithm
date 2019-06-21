@@ -25,7 +25,7 @@ public class SelectSort {
 
     public static void main(String[] args) {
         System.out.println("alksdjfalkdsjf");
-        for (int x : selectSort(new int[]{23, 423, 3, 234, 235, 23, 3}))
+        for (int x : selectSort(new int[]{1,23, 423, 3, 234, 235, 23, 3}))
             System.out.println(x);
         System.out.println("alksdjfalkdsjf");
     }
