@@ -16,23 +16,7 @@ public class InsertSort {
      * @param l
      * @return
      */
-    public static List<Integer> selectSort(List<Integer> l) {
 
-        for (int i = 0; i < l.size(); i++) {
-            //处理的第i个位置
-            int k = i;
-            for (int j = i; j < l.size(); j++)
-                if (l.get(i) > l.get(j)) {
-                    insert(l, i, j);
-                }
-        }
-        return l;
-    }
-
-    private static void insert(List<Integer> l, int i, int j) {
-        l.add(i, l.get(j));
-        l.remove(j + 1);
-    }
 
     public static List<Integer> selectSortBook(List<Integer> l) {
 
