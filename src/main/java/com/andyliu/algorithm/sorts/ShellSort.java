@@ -79,11 +79,13 @@ public class ShellSort {
                 int minindex;
                 for (int j = i + gap; j < len; j += gap) { //进行多趟排序 j每加一次gap ，j前面的数据就已经排好了
                     //从第二个位置开始排序 与前面的数进行对比
-                    for (int k = j-gap; k >= 0; k -= gap) {
+                    for (int k = j - gap; k >= 0; k -= gap) {//k前面的数据默认都已经排好序了 要排第j个了
                         if (array[j] >= array[k] && gap == j - k)
                             break;
-                        if((k-gap>0&&array[j]<=array[k]&&array[j]>=array[k-gap])||(array[j]<=array[k]&& k-gap <0))
-                            insert(array,j,k,gap);
+                        if (array[j] >= array[k]) {
+                            insert(array, j, k + gap, gap);
+                            break;
+                        }
                     }
                 }
             }
@@ -92,15 +94,15 @@ public class ShellSort {
 
     private static void insert(int[] array, int j, int k, int gap) {
         int temp = array[j];
-        for (int a = j; a > k; a -= gap)
-            array[a] = array[a-gap];
+        for (int a = j; a >= k; a -= gap)
+            array[a] = array[a - gap];
         array[k] = temp;
 
     }
 
     public static void main(String[] args) {
         System.out.println("alksdjfalkdsjf");
-        for (int x : shellsort(new int[]{23, 423, 334,238,4,201,4753, 234, 235, 23, 3}))
+        for (int x : shellsort(new int[]{23, 423, 334, 238, 4, 201, 4753, 234, 235, 23, 3}))
             System.out.println(x);
         System.out.println("alksdjfalkdsjf");
     }
