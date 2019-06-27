@@ -24,26 +24,40 @@ public class ShellSort {
     public static int[] shellsorthand(int[] array) {
         int len = array.length;
         int temp = len / 2;
-        for (int gap = len / 2; gap > 0; gap /= 2)
-            for (int i = 0; i < gap; i++) {
-                int first = i;
-                int min = array[i];
-                int minindex = i;
-                for (int j = i + gap; j < len; j += gap) {
-                    if (array[j] > array[j-gap]){
-                        min = array[j];
-                        minindex = j;
+        for (int gap = len / 2; gap > 0; gap /= 2) //这个for循环实现分组功能
+            for (int i = 0; i < gap; i++) { //每个i代表每一组  对每组进行分别遍历
+                int min;
+                int minindex;
+                for (int j = i; j < len; j += gap) { //进行多趟排序 j每加一次gap ，j前面的数据就已经排好了
+                    min = array[j];
+                    minindex = j;
+                    for (int k = minindex; k < len; k += gap)
+                        if (array[k] < min) {
+                            System.out.println("1111111111111111111");
+                            min = array[k];
+                            minindex = k;
+                        }
+                    for (int k = minindex; k >= j; k -= gap) {
+                        System.out.println("22222222222222222222222");
+                        if (k != j)
+                            array[k] = array[k - gap];
+                        else array[k] = min;
+
                     }
-                    if(i!=minindex){
-                        int changetmp = array[i];
-                        int firstint = array[minindex];
-                        array[i] = array[minindex];
-
-
-                    }
-
-                    array[j] = array[i];
-                    array[i] = temp;
+//                    if (array[j] < array[j-gap]){
+//                        min = array[j];
+//                        minindex = j;
+//                    }
+//                    if(i!=minindex){
+//                        int changetmp = array[i];
+//                        int firstint = array[minindex];
+//                        array[i] = array[minindex];
+//
+//
+//                    }
+//
+//                    array[j] = array[i];
+//                    array[i] = temp;
                 }
             }
         return array;
