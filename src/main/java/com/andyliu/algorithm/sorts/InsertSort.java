@@ -6,16 +6,12 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 插入排序
+ * 1. 从第0个位置开始，第0个位置自己是有序的。
+ * 2. 第一个位置和第0个位置比较，如果第1个比第0个大，则将第1个插到第0个前面。
+ * 3. 这样，到第k个的时候，第k-1前面的数据是有序的，只要知道第k个值应该放到哪个位置就行了，所以第k值向前查找合适的位置，并插入到那个位置即可。
  */
 public class InsertSort {
-    /**
-     * 这个方法自己造的 貌似有点问题 照课本写一个 再对照吧
-     * 这个程序认为第i个之前的数据已经排好了 i+1的数据去与前i个对比 第i+1的数据插入到对应位置
-     *
-     * @param l
-     * @return
-     */
+
 
 
     public static List<Integer> selectSortBook(List<Integer> l) {

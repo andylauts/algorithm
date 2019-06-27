@@ -1,5 +1,10 @@
 package com.andyliu.algorithm.sorts;
 
+/**
+ * 总是循环向后排序，相邻两个数值比较。
+ * 1. 如果左边大于右边，则交换位置。否则，进行下一个位置比对。
+ * 2. 这样，最后面的数据将会先排好。
+ */
 public class BubbleSort {
     public static int[] bubbleStort(int[] a) {
 
