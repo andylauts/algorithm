@@ -75,8 +75,6 @@ public class ShellSort {
         int temp = len / 2;
         for (int gap = len / 2; gap > 0; gap /= 2) //这个for循环实现分组功能
             for (int i = 0; i < gap; i++) { //每个i代表每一组  对每组进行分别遍历
-                int min;
-                int minindex;
                 for (int j = i + gap; j < len; j += gap) { //进行多趟排序 j每加一次gap ，j前面的数据就已经排好了
                     //从第二个位置开始排序 与前面的数进行对比
                     for (int k = j - gap; k >= 0; k -= gap) {//k前面的数据默认都已经排好序了 要排第j个了
@@ -84,6 +82,11 @@ public class ShellSort {
                             break;
                         if (array[j] >= array[k]) {
                             insert(array, j, k + gap, gap);
+                            break;
+                        }
+                        if (array[j] < array[k] && k==i ) {
+
+                            insert(array, j, k, gap);
                             break;
                         }
                     }
@@ -94,7 +97,7 @@ public class ShellSort {
 
     private static void insert(int[] array, int j, int k, int gap) {
         int temp = array[j];
-        for (int a = j; a >= k; a -= gap)
+        for (int a = j; a > k; a -= gap)
             array[a] = array[a - gap];
         array[k] = temp;
 
