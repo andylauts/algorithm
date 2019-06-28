@@ -78,13 +78,13 @@ public class ShellSort {
                 for (int j = i + gap; j < len; j += gap) { //进行多趟排序 j每加一次gap ，j前面的数据就已经排好了
                     //从第二个位置开始排序 与前面的数进行对比
                     for (int k = j - gap; k >= 0; k -= gap) {//k前面的数据默认都已经排好序了 要排第j个了
-                        if (array[j] >= array[k] && gap == j - k)
+                        if (array[j] >= array[k] && gap == j - k) //如果j在前面排好序的数据中排到最后，则不用处理 直接下一个
                             break;
-                        if (array[j] >= array[k]) {
+                        if (array[j] >= array[k]) {            // 如果循环遍历导了最大的那个比j小的数，则进行插入排序
                             insert(array, j, k + gap, gap);
                             break;
                         }
-                        if (array[j] < array[k] && k==i ) {
+                        if (array[j] < array[k] && k==i ) {  //如果最终查到j是前面排好序的数据的第一个 则将j数据插入到整组的第一个位置
 
                             insert(array, j, k, gap);
                             break;
