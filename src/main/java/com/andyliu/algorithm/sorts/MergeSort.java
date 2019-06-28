@@ -1,5 +1,9 @@
 package com.andyliu.algorithm.sorts;
 
+/**
+ * 归并排序是先将数组分开分别进行排序
+ * 排序回来后再进行整合
+ */
 public class MergeSort {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 23, 423, 3, 234, 235, 23, 3};
