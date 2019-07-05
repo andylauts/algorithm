@@ -1,9 +1,5 @@
 package com.andyliu.algorithm.sorts;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class CountingSort {
     public static int[] countingsort(int[] array) {
         int min = array[0];
@@ -15,10 +11,10 @@ public class CountingSort {
         int[] tmp = new int[max - min + 1];
         for (int i = 0; i < array.length; i++)
             tmp[array[i] - min]++;
-        int cnt=0;
-        for(int i=0;i<tmp.length;i++)
-            for(int j =0;j<tmp[i];j++)
-                array[cnt++] = i+min;
+        int cnt = 0;
+        for (int i = 0; i < tmp.length; i++)
+            for (int j = 0; j < tmp[i]; j++)
+                array[cnt++] = i + min;
         return array;
 
     }
